@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Ravabot - Power Management System</title>
+  </head>
+  <body class="">
+    <section class="dashboard">
+      <section>
+        <nav class="flex nav">
+          <img src="./rav.png" alt="Ravabot" class="logo logo-black" />
+          <img src="./wrav.png" alt="Ravabot" class="logo logo-white" />
+
+          <div>
+            <div class="flex theme-toggle">
+              <p>Theme:</p>
+              <i id="themeBtn" class="fa fa-sun-o theme-icon light-mode"></i>
+            </div>
+          </div>
+        </nav>
+        <div class="toggles">
+          <div class="flex light-toggle">
+            <p>Inverter</p>
+            <i
+              id="toggleBtn"
+              class="fa fa-toggle-off toggle-icon toggle-off"
+            ></i>
+            <p>PHCN</p>
+          </div>
+          <button id="openModalBtn" class="button">Set Config</button>
+        </div>
+        <section class="dashboard-details">
+          <div class="card">
+            <i class="fa fa-battery-three-quarters icon"></i>
+            <div>
+              <h4 id="batteryPercent">30%</h4>
+              <p>Battery</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-circle icon"></i>
+            <div>
+              <h4 id="current">300A</h4>
+              <p>Current</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-bolt icon"></i>
+            <div>
+              <h4 id="voltage">300V</h4>
+              <p>Voltage</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-lightbulb-o icon"></i>
+            <div>
+              <h4 id="energy">300J</h4>
+              <p>Energy</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-cog icon"></i>
+            <div>
+              <h4 id="power">300Kwh</h4>
+              <p>Power</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <i class="fa fa-area-chart icon"></i>
+            <div>
+              <h4 id="frequency">300Hz</h4>
+              <p>Frequency</p>
+            </div>
+          </div>
+          <div class="card">
+            <i class="fa fa-line-chart icon"></i>
+            <div>
+              <h4 id="powerFactor">300</h4>
+              <p>Power factor</p>
+            </div>
+          </div>
+          <div class="card">
+            <span>&deg;C</span>
+            <div>
+              <h4 id="temperature">300 &deg;C</h4>
+              <p>Temperature</p>
+            </div>
+          </div>
+        </section>
+        <h3>Devices Status</h3>
+
+        <section class="dashboard-details devices">
+          <!-- Fan -->
+          <div class="card">
+            <i class="fa fa-refresh icon"></i>
+            <div>
+              <h4>Fan</h4>
+              <p id="fanStatus">Status: On</p>
+            </div>
+          </div>
+
+          <!-- Display -->
+          <div class="card">
+            <i class="fa fa-desktop icon"></i>
+            <div>
+              <h4>Display</h4>
+              <p id="displayStatus">Status: Off</p>
+            </div>
+          </div>
+
+          <!-- Trainee Sockets -->
+          <div class="card">
+            <i class="fa fa-plug icon"></i>
+            <div>
+              <h4>Trainee Sockets</h4>
+              <p id="socketsStatus">Status: On</p>
+            </div>
+          </div>
+
+          <!-- Center Light -->
+          <div class="card">
+            <i class="fa fa-lightbulb-o icon"></i>
+            <div>
+              <h4>Center Light</h4>
+              <p id="lightStatus">Status: Off</p>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="flex modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Configuration</h3>
+          <span class="close" id="closeModalBtn">&times;</span>
+        </div>
+
+        <form id="configForm">
+          <div class="form-group">
+            <label for="tempThreshold">Temperature Threshold</label>
+            <input type="number" id="tempThreshold" required />
+          </div>
+
+          <div class="form-group">
+            <label for="range1">Battery Range 1</label>
+            <input type="number" id="range1" required />
+          </div>
+
+          <div class="form-group">
+            <label for="range2">Battery Range 2</label>
+            <input type="number" id="range2" required />
+          </div>
+
+          <div class="form-group">
+            <label for="range3">Battery Range 3</label>
+            <input type="number" id="range3" required />
+          </div>
+
+          <div class="form-group">
+            <label for="range4">Battery Range 4</label>
+            <input type="number" id="range4" required />
+          </div>
+
+          <div class="form-group">
+            <label for="minBattery">Min Battery %</label>
+            <input type="number" id="minBattery" required />
+          </div>
+
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
